@@ -1,0 +1,74 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+namespace royaltyRates{
+     //1st option variables
+    const int FINAL_MANUSCRIPT_DELIVERY_PAID = 5000;
+    const int NOVEL_PUBLISHED_PAID = 20000;
+        //2nd option variables
+    const double SECOND_OPTION_RATE_NET_PROFIT_PER_COPY = 0.125;
+       //3rd option variables
+    const double THIRD_OPTION_RATE_FOR_NET_FIRST_4K = 0.100;
+    const double THIRD_OPTION_RATE_FOR_NET_AFTER_4K = 0.140;
+}
+
+    double calculateOption1();
+    double calculateOption2(int numCopiesSold, double netPrice);
+    double calculateOption3(int numCopiesSold, double netPrice);
+
+int main() {
+    // Write your main here
+
+    double netPrice;
+    int numCopiesSold;
+
+ 
+
+    cout << "Enter the net price of each copy: ";
+    cin >> netPrice;
+    cout << endl;
+
+    cout << "Enter the estimated # of copies that will be sold: ";
+    cin >> numCopiesSold;
+    cout << endl;
+
+    double royalty1, royalty2, royalty3;
+    royalty1 = calculateOption1();
+    royalty2 = calculateOption2(numCopiesSold, netPrice);
+    royalty3 = calculateOption3(numCopiesSold, netPrice);
+
+
+    cout << fixed << setprecision(2);
+    cout << "Royalty option1: " << royalty1 << " ";
+    cout << ", Royalty option2: " << royalty2 << " ";
+    cout << ", Royalty option3: " << royalty3;
+
+    return 0;
+}
+
+double calculateOption1(){
+    return royaltyRates::FINAL_MANUSCRIPT_DELIVERY_PAID + royaltyRates::NOVEL_PUBLISHED_PAID;
+}
+
+double calculateOption2(int numCopiesSold, double netPrice){
+    return numCopiesSold * (netPrice * royaltyRates::SECOND_OPTION_RATE_NET_PROFIT_PER_COPY);
+}
+
+double calculateOption3(int numCopiesSold, double netPrice){
+    
+    if(numCopiesSold <= 4000){
+        return (numCopiesSold * netPrice) * royaltyRates::THIRD_OPTION_RATE_FOR_NET_FIRST_4K; 
+    }
+    else if(numCopiesSold > 4000){
+
+        //double sum;
+        //sum = ((4000 * netPrice) * royaltyRates::THIRD_OPTION_RATE_FOR_NET_FIRST_4K) + (((numCopiesSold - 4000) * netPrice) * royaltyRates::THIRD_OPTION_RATE_FOR_NET_AFTER_4K);
+        int additionalCopies = numCopiesSold - 4000;
+        double first4kRoyalties = 4000 * netPrice * royaltyRates::THIRD_OPTION_RATE_FOR_NET_FIRST_4K;
+        double additionalRoyalties = additionalCopies * netPrice * royaltyRates::THIRD_OPTION_RATE_FOR_NET_AFTER_4K;
+
+        return first4kRoyalties + additionalRoyalties;
+    }
+}
