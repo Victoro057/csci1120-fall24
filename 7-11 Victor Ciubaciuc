@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    // Write your main here
+    string input;
+    int sum;
+
+    cout << "Enter a string: ";
+    getline(cin, input);
+    cout << endl;
+
+    for (char ch : input){
+        if(ch != ' '){
+             sum += static_cast<int>(ch);
+        }
+    }
+
+    cout << "The sum is: " << sum << endl;
+    
+    return 0;
+}
