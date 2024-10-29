@@ -1,0 +1,133 @@
+// Write your code here
+#include <string>
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+class studentType
+{
+    private:
+        string firstName;
+        string lastName;
+        char courseGrade;
+        int testScore;
+        int programmingScore;
+        double GPA;
+
+
+    public:
+            //Setters below
+        void setFirstName(string val){
+            firstName = val;
+        }
+        void setLastName(string val){
+            lastName = val;
+        }
+        void setGrade(){
+            int average = (testScore + programmingScore) /2;
+            if(average >= 90){
+                courseGrade = 'A';
+            }
+            else if(average >= 80){
+                courseGrade = 'B';
+            }
+            else if(average >= 70){
+                courseGrade = 'C';
+            }
+            else if(average >= 60){
+                courseGrade = 'D';
+            }
+            else{
+                courseGrade = 'F';
+            }
+        }
+
+        void setTestScore(int val){
+            testScore = val;
+        }
+        void setProgScore(int val){
+            programmingScore = val;
+        }
+        void setGPA(double val){
+            GPA = val;
+        }
+
+            //Getters below
+        string getFirstName(){
+            return firstName;
+        }
+        string getLastName(){
+            return lastName;
+        }
+
+        char getGrade(){
+            return courseGrade;
+        }
+
+        int getTestScore(){
+            return testScore;
+        }
+        int getProgScore(){
+            return programmingScore;
+        }
+        double getGPA(){
+            return GPA;
+        }
+
+
+        //Other methods/funcitons
+    void print(){
+         //Printing the output
+        cout << "Name: " << firstName << " " << lastName << endl;
+        cout << "Grade: " << courseGrade << endl;
+        cout << "Test Score: " << testScore << endl;
+        cout << "Programming score: " << programmingScore<< endl;
+        cout << "GPA: " << GPA << endl;
+    }
+    void promptForValues(){
+        cout << "Enter the first name: ";
+        cin >> firstName;
+        cout << endl;
+    
+        cout << "Enter the last name: ";
+        cin >> lastName;
+        cout << endl;
+        
+        cout << "Enter the test score: ";
+        cin >> testScore;
+        cout << endl;
+
+        cout << "Enter the programming score: ";
+        cin >> programmingScore;
+        cout << endl;
+
+        cout << "Enter the GPA: ";
+        cin >> GPA;
+        cout << endl;
+    }
+
+};
+
+int main(){
+
+    studentType student;
+
+        string firstName;
+        string lastName;
+        char courseGrade;
+        int testScore;
+        int programmingScore;
+        double GPA;
+
+
+
+    student.promptForValues();
+    student.setGrade();
+    student.print();
+}
+
+
+    student.print();
+}
+
+
