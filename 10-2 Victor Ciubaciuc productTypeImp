@@ -1,0 +1,32 @@
+// Write your code here
+#include "productType.h"
+
+int main(){
+
+    productType product1("Coffee Maker", "001", "Keurig", 1, 119.99, 10);
+    productType product2;
+    productType product3(1, 299.99, 50.00);
+    productType product4("Coffee Maker", 1, 250.99, 25.00);
+
+    product2.set("Ladder", "002", "Gorilla ladders", 1, 199.99, 30);
+    product2.print();
+
+    product2.setQuantitiesInStock(10);
+    product2.setPrice(229.99);
+    product2.setDiscount(49.99);
+    product2.print();
+
+    product2.updateQuantitiesInStock(20);
+    product2.print();
+
+    product1.print();
+    product3.print();
+    product4.print();
+
+
+
+   return 0; 
+}
+
+
+
