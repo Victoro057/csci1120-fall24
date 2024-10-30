@@ -1,0 +1,65 @@
+// Write your code here
+
+#include "houseType.h"
+
+int main(){
+
+    houseType house1("4-level", 3, 2, 2, 1995, 2100, 415000, 3000);
+    houseType house2;
+        //test .print()
+    house1.print();
+
+    //testing .set()
+    house2.set("Rambler", 2, 1, 2, 2010, 1750, 350000, 2760);
+
+    //testing .setStyle()
+    house2.setStyle("Split-level");
+    //testing .getStyle()
+    cout << "House style: " << house2.getStyle() << endl;
+
+    //testing .setNumOfBedrooms()
+    house2.setNumOfBedrooms(4);
+    //testing .getNumOfBedrooms()
+    cout << "Number of bedrooms: " << house2.getNumOfBedrooms() << endl;
+
+    //testing .setNumOfBathrooms()
+    house2.setNumOfBathrooms(3);
+    //testing .getNumOfBarhrooms()
+    cout << "Number of bathrooms: " << house2.getNumOfBathrooms() << endl;
+
+    //testing .setNumOfCarsGarage
+    house2.setNumOfCarsGarage(1);
+    //testing .getNumOfCarsGarage
+    cout << "Number of cars in garage: " << house2.getNumOfCarsGarage() << endl;
+
+    //testing .setYearBuilt()
+    house2.setYearBuilt(2003);
+    //testing .getYearBuilt()
+    cout << "Year built: " << house2.getYearBuilt() << endl;
+
+    //testing .setFinishedSquareFootage()
+    house2.setFinishedSquareFootage(2000);
+    //testing .getFinishedSquareFootage()
+    cout << "Finished square footage: " << house2.getFinishedSquareFootage() << endl;
+
+    //testing .setPrice()
+    house2.setPrice(380000);
+    //testing .getPrice()
+    cout << "Price: " << house2.getPrice() << endl;
+
+    //testing .setTax()
+    house2.setTax(3000);
+    //testing .getTax()
+    cout << "Tax: " << house2.getTax() << endl;
+
+    cout << "****************************************************" << endl;
+    cout << "Output final specs of houses" << endl;
+
+    house1.print();
+    cout << endl;
+    house2.print();
+
+    return 0;
+}
+
+
