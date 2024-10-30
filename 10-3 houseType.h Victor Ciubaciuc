@@ -1,0 +1,117 @@
+#include <string>
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+class houseType
+{
+private:
+
+    string style;
+    int numOfBedrooms;
+    int numOfBathrooms;
+    int numOfCarsGarage;
+    int yearBuilt;
+    int finishedSquareFootage;
+    double price;
+    double tax;
+
+
+public:
+    void set(string type, int bedRoomNum, int bathRoomNum, int carsGarage, int year, int finishedSqFoot, double cost, double fanumTax){
+        style = type;
+        numOfBedrooms = bedRoomNum;
+        numOfBathrooms = bathRoomNum;
+        numOfCarsGarage = carsGarage;
+        yearBuilt = year;
+        finishedSquareFootage = finishedSqFoot;
+        price = cost;
+        tax = fanumTax;
+    }
+    void print() const{
+            //Headers
+        cout << left << setw(20) << "Home Style"
+                     << setw(20) << "Number of Bedrooms"
+                     << setw(20) << "Number of Bathrooms"
+                     << setw(20) << "Year built in" 
+                     << setw(25) << "Finished square foot"
+                     << setw(20) << "Price" 
+                     << setw(20) << "Tax" 
+                     << endl;
+ 
+        cout << left << setw(20) << style
+                     << setw(20) << numOfBedrooms
+                     << setw(20) << numOfBathrooms
+                     << setw(20) << yearBuilt
+                     << setw(25) << finishedSquareFootage
+                     << setw(20) << price
+                     << setw(20) << tax
+                     << endl;
+                     
+    }
+
+    void setStyle(string houseStyle){
+        style = houseStyle;
+    }
+    string getStyle() const{
+        return style;
+    }; 
+    void setNumOfBedrooms(int bedsNum){
+        numOfBedrooms = bedsNum;
+    };
+    int getNumOfBedrooms() const{
+        return numOfBedrooms;
+    }; 
+    void setNumOfBathrooms(int bathNum){
+        numOfBathrooms = bathNum;
+    };
+    int getNumOfBathrooms() const{
+        return numOfBathrooms;
+    }; 
+    void setNumOfCarsGarage(int carsInGarage){
+        numOfCarsGarage = carsInGarage;
+    };
+    int getNumOfCarsGarage() const{
+        return numOfCarsGarage;
+    }; 
+    void setYearBuilt(int year){
+        yearBuilt = year;
+    };
+    int getYearBuilt() const{
+        return yearBuilt;
+    }; 
+    void setFinishedSquareFootage(int finishedSqFoot){
+        finishedSquareFootage = finishedSqFoot;
+    };
+    int getFinishedSquareFootage() const{
+        return finishedSquareFootage;
+    }; 
+    void setPrice(double cost){
+        price = cost;
+    };
+    double getPrice() const{
+        return price;
+    }; 
+    void setTax(double fanumTax){
+        tax = fanumTax;
+    };
+    double getTax() const{
+        return tax;
+    }; 
+
+    houseType(string = "", int = 0, int = 0, int = 0, int = 0, int = 0, double = 0, double = 0){
+
+    }
+    houseType(string styleType, int bedNum, int bathNum, int carInGarNum, int year, int finSqFoot, int cost, int fanumTax){
+        style = styleType;
+        numOfBedrooms = bedNum;
+        numOfBathrooms = bathNum;
+        numOfCarsGarage = carInGarNum;
+        yearBuilt = year;
+        finishedSquareFootage = finSqFoot;
+        price = cost;
+        tax = fanumTax;
+    }
+
+};
