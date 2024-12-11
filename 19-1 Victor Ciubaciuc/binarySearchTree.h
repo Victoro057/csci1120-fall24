@@ -222,7 +222,7 @@ int binaryTreeType<elemType>::nodeCount(nodeType<elemType>* p) const{
     if(p == nullptr)
         return 0;
     else
-        return 1 + nodeCount(p -> leftLink) + nodeCount(p -> rightLink);
+        return 1 + nodeCount(p -> lLink) + nodeCount(p -> rLink);
 }
 
 
